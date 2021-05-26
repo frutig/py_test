@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('error') {
+    stage('Lint Code') {
       steps {
-        echo 'Python test'
+        echo 'Run Python Linter'
       }
     }
 
