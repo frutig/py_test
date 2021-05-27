@@ -6,7 +6,7 @@ pipeline {
      timeout(time: 20, unit: 'MINUTES') // Set a timeout on the total execution time of the job
    }
   agent {
-    dockerfile { 'filename 'Dockerfile.build' }
+    dockerfile { filename 'Dockerfile.build' }
   }
   stages {
     stage('Checkout') {
