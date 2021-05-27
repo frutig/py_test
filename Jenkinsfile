@@ -17,36 +17,22 @@ pipeline {
     }
     stage('Setup') {
       steps {
-        script {
-          sh """
-          pip install -r requirements.txt
-          """
-        }
+        pip install -r requirements.txt
       }
     }
     stage('Linting') {
       steps {
-        script {
-          sh """
-          pylint **/*.py
-          """
-        }
+        pylint **/*.py
       }
     }
     stage('Unit Testing') {
       steps {
-        script {
-          sh """
-          python3 -m unittest discover -s tests/unit
-          """
-        }
+        python3 -m unittest discover -s tests/unit
       }
     }
     stage('Integration Testing') {
       steps {
-        script """
         python -m unittest discover -s tests/integration
-        """
       }
     }
 
