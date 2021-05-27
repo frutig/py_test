@@ -20,11 +20,6 @@ pipeline {
         pip install -r requirements.txt
       }
     }
-    stage('Linting') {
-      steps {
-        pylint .
-      }
-    }
     stage('Unit Testing') {
       steps {
         python3 -m unittest discover -s tests/unit
