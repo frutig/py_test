@@ -20,14 +20,19 @@ pipeline {
         pip install -r requirements.txt
       }
     }
+    stage('Linting') {
+      steps {
+        pylint .
+      }
+    }
     stage('Unit Testing') {
       steps {
-        python3 -m unittest discover -s tests/unit
+        python3 -m unittest tests/unit.py
       }
     }
     stage('Integration Testing') {
       steps {
-        python -m unittest discover -s tests/integration
+        python -m unittest tests/integration.py
       }
     }
 
