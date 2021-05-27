@@ -29,12 +29,12 @@ pipeline {
     }
     stage('Unit Testing') {
       steps {
-        python3 -m unittest tests/unit.py
+        sh 'python3 -m unittest tests/unit.py'
       }
     }
     stage('Integration Testing') {
       steps {
-        python -m unittest tests/integration.py
+        sh 'python3 -m unittest tests/integration.py'
       }
     }
 
