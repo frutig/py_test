@@ -40,14 +40,11 @@ pipeline {
   }
   post {
     success {
-      def msg = "Deploy succeeded for #{params.DEPLOY_APP} #{params.DEPLOY_VER} " +
-              "to #{params.DEPLOY_ENV} #{ (${env.BUILD_URL})"
-        echo $msg
+        echo "Success - add deployment here"
       }
     failure {
       script {
-        def msg = "Build error for ${env.JOB_NAME} ${env.BUILD_NUMBER} (${env.BUILD_URL})"
-        echo $msg
+        echo "Build error for ${env.JOB_NAME} ${env.BUILD_NUMBER} (${env.BUILD_URL})"
       }
      }
   }
