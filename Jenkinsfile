@@ -62,5 +62,6 @@ pipeline {
         msg = "Build error for ${env.JOB_NAME} ${env.BUILD_NUMBER} (${env.BUILD_URL})"
         echo $msg
       }
+     }
   }
 }
