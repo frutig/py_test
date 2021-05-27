@@ -22,7 +22,7 @@ pipeline {
     }
     stage('Linting') {
       steps {
-        pylint .
+        pylint *.py
       }
     }
     stage('Unit Testing') {
