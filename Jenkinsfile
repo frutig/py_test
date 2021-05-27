@@ -6,7 +6,7 @@ pipeline {
      timeout(time: 20, unit: 'MINUTES') // Set a timeout on the total execution time of the job
    }
   agent {
-    dockerfile { filename 'Dockerfile.build' }
+    dockerfile true
   }
   stages {
     stage('Checkout') {
@@ -17,7 +17,7 @@ pipeline {
     }
     stage('Setup') {
       steps {
-        pip install -r requirements.txt
+        sh 'pip install -r requirements.txt'
       }
     }
     stage('Linting') {
