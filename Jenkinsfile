@@ -55,12 +55,12 @@ pipeline {
     success {
       msg = "Deploy succeeded for #{params.DEPLOY_APP} #{params.DEPLOY_VER} " +
               "to #{params.DEPLOY_ENV} #{ (${env.BUILD_URL})"
-      # email
+        echo $msg
       }
     failure {
       script {
         msg = "Build error for ${env.JOB_NAME} ${env.BUILD_NUMBER} (${env.BUILD_URL})"
-        # email
+        echo $msg
       }
   }
 }
